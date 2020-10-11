@@ -90,11 +90,11 @@
   <div>
     <h2>UML e Modelo de banco</h2>
     <p>
-     <img height="300px" width="500px"
-          src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/DB/DB%20-%20ups.png" alt="UML" />
-    </p>
-    <p>
        <img height="300px" width="500px"
           src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Documenta%C3%A7%C3%A3o/UML/UML.png" alt="Modelo logico" />
+    </p>
+    <p>
+     <img height="300px" width="500px"
+          src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/DB/DB%20-%20ups.png" alt="UML" />
     </p>
   </div>
