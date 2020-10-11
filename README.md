@@ -12,7 +12,7 @@
   </p>
 
   <div>
-      <h2> GIFs das funcionalidades principais </h2>
+      <h2> Video de apresentção (Completo) </h2>
       <a href="https://youtu.be/Ah2mrl_O3ZM" target="_blank" rel="noopener noreferrer">
         <img height="300px" width="500px"
           src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Videos/video-completo.png" alt="Video" />
@@ -82,7 +82,19 @@
       <li>Mysql</li>
       <li>PHPmyadmin</li>
       <li>Bootstrap (Framework)</li>
-      <li>Stah (Ferramenta)</li>
+      <li>Astah (Ferramenta)</li>
       <li>Bizagi(Ferramenta)</li>
     </ul>
+  </div>
+
+  <div>
+    <h2>UML e Modelo de banco</h2>
+    <p>
+     <img height="300px" width="500px"
+          src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/DB/DB%20-%20ups.png" alt="UML" />
+    </p>
+    <p>
+       <img height="300px" width="500px"
+          src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Documenta%C3%A7%C3%A3o/UML/UML.png" alt="Modelo logico" />
+    </p>
   </div>
