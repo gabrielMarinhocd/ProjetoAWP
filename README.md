@@ -15,19 +15,31 @@
       <h2> GIFs das funcionalidades principais </h2>
       <a href="https://youtu.be/Ah2mrl_O3ZM" target="_blank" rel="noopener noreferrer">
         <img height="300px" width="500px"
-          src="https://github.com/gabrielMarinhocd/Meu_site/blob/master/Imagens/Site_pessoal/Video.png" alt="Video" />
+          src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Videos/video-completo.png" alt="Video" />
       </a>
   </div>
 
   <div>
       <h2> GIFs das funcionalidades principais </h2>
-       <img src="https://github.com/gabrielMarinhocd/registra_feedback/blob/master/Imagens/AWP-1.gif"
+       <img src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Videos/AWP-1.gif"
         width="400" height="250" margin="10px" />
-       <img src="https://github.com/gabrielMarinhocd/registra_feedback/blob/master/Imagens/AWP-2.gif"
+       <img src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Videos/AWP-2.gif"
         width="400" height="250" margin="10px" />
-       <img src="https://github.com/gabrielMarinhocd/registra_feedback/blob/master/Imagens/AWP-3.gif"
+       <img src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Videos/AWP-3.gif"
         width="400" height="250" margin="10px" />
-       <img src="https://github.com/gabrielMarinhocd/registra_feedback/blob/master/Imagens/AWP-4.gif"
+       <img src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Videos/AWP-4.gif"
+        width="400" height="250" margin="10px" />
+       <img src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Videos/AWP-5.gif"
+        width="400" height="250" margin="10px" />
+       <img src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Videos/AWP-6.gif"
+        width="400" height="250" margin="10px" />
+       <img src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Videos/AWP-7.gif"
+        width="400" height="250" margin="10px" />
+       <img src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Videos/AWP-8.gif"
+        width="400" height="250" margin="10px" />
+       <img src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Videos/AWP-9.gif"
+        width="400" height="250" margin="10px" />
+       <img src="https://github.com/gabrielMarinhocd/ProjetoAWP/blob/master/Videos/AWP-10.gif"
         width="400" height="250" margin="10px" />
   </div>
 
