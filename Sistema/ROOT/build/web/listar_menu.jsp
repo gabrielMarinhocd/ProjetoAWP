@@ -32,27 +32,28 @@
     </head>
     <body>
         <%@include file="banner.jsp" %>
-        <div class="central" id="central">
+        <div class="container container-padrao">
             <h2 >Lista de Menus <div align="right"><a href="form_inserir_menu.jsp"><button type="button" class="btn btn-secondary">Novo</button></a></div></h2>
+            <div class="table-responsive-lg table-hover">
+                <table class="table" id="table">
+                    <tr>
+                        <th>Título</th>
+                        <th>Link</th>
+                        <th>Opções</th>
+                    </tr>
+                    <%                    for (Menu m : lista) {
+                    %>
+                    <tr>
+                        <td><%=m.getTitulo()%></td>
+                        <td><%=m.getLink()%></td>
+                        <td><a href="form_alterar_menu.jsp?id=<%=m.getId()%>"><img src="imagens/icones/lapis_preto.png" /></a> <a href="#" onclick="excluir('<%=m.getTitulo()%>',<%=m.getId()%>)"> <img src="imagens/icones/lixeira.png"/></a></td>
+                    </tr>            
 
-            <table class="table" id="table">
-                <tr>
-                    <th>Título</th>
-                    <th>Link</th>
-                    <th>Opções</th>
-                </tr>
-                <%                    for (Menu m : lista) {
-                %>
-                <tr>
-                    <td><%=m.getTitulo()%></td>
-                    <td><%=m.getLink()%></td>
-                    <td><a href="form_alterar_menu.jsp?id=<%=m.getId()%>"><img src="imagens/icones/lapis_preto.png" /></a> <a href="#" onclick="excluir('<%=m.getTitulo()%>',<%=m.getId()%>)"> <img src="imagens/icones/lixeira.png"/></a></td>
-                </tr>            
-
-                <%
-                    }
-                %>   
-            </table>
+                    <%
+                        }
+                    %>   
+                </table>
+            </div>
         </div>
         <%@include file="rodape_cf.jsp" %> 
         <%@include file="importacoes2.jsp" %>

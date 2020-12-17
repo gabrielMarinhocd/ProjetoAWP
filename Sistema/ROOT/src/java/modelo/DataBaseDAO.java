@@ -11,7 +11,7 @@ public class DataBaseDAO {
     public void conectar() throws Exception {
         String url = "jdbc:mysql://localhost/protecline";
         String user = "root";
-        String pass = "senha";
+        String pass = "";
         Class.forName("com.mysql.jdbc.Driver");
         conn = DriverManager.getConnection(url, user, pass);
     }

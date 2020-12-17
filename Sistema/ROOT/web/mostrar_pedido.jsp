@@ -45,7 +45,7 @@
     </head>
     <body>
         <%@include file="banner_cliente.jsp" %>
-        <div class="container" style="margin-top: 2%;">
+        <div class="container container-padrao">
             <div class="card">
                 <div class="card-body" style=" padding: 2% 2% 2% 2%;" >
                     <h2 align="center">Pedidos <%=p.getId()%></h2>
@@ -72,51 +72,53 @@
                         <%= p.getFormaPagamento() %> 
                         <% } %>
                     </p>
-                    <table class="table table-responsive-md " > 
-                        <%
-                            int i = 1;
-                            for (ItemPedido ip : carrinho) {
-                        %>
-                        <tr>
-                            <th>Dados do serviço N° <%=i%></th>
-                        </tr>
-                        <tr>
-                            <th>Tipo de Atendimento</th>
-                            <th>Problema</th>
-                            <th>Local</th>
-                            <th>Numero de serie</th>
-                            <th></th>
-                        </tr>
-                        <tr>
-                            <td><%=ip.getMeioPagamento()%></td>
-                            <td><%=ip.getProblema()%></td>
-                            <td><%=ip.getLocal()%></td>
-                            <td><%= ip.getNumeroSerie()%> </td>
-                            <td></td>
-                        </tr> 
+                    
+                    <div class="table-responsive-lg table-hover">
+                        <table class="table " > 
+                            <%
+                                int i = 1;
+                                for (ItemPedido ip : carrinho) {
+                            %>
+                            <tr>
+                                <th>Dados do serviço N° <%=i%></th>
+                            </tr>
+                            <tr>
+                                <th>Tipo de Atendimento</th>
+                                <th>Problema</th>
+                                <th>Local</th>
+                                <th>Numero de serie</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td><%=ip.getMeioPagamento()%></td>
+                                <td><%=ip.getProblema()%></td>
+                                <td><%=ip.getLocal()%></td>
+                                <td><%= ip.getNumeroSerie()%> </td>
+                                <td></td>
+                            </tr> 
 
-                        <tr>
-                            <th>Modelo</th>
-                            <th>Fabricante</th>
-                            <th>Potencial</th>
-                            <th>Tensão de entrada</th>
-                            <th>Tensão de saida</th>
-                        </tr>
-                        <tr>
-                            <td><%=ip.getModelo()%></td>
-                            <td><%=ip.getFabricante()%></td>
-                            <td><%=ip.getPotencia()%></td>
-                            <td><%= ip.getTensaoEntrada()%></td>
-                            <td><%= ip.getTensaoSaida()%></td
-                            >
-                        </tr>
-                        <%
-                                i++;
-                            }
-                        %>   
-                    </table>
-
-
+                            <tr>
+                                <th>Modelo</th>
+                                <th>Fabricante</th>
+                                <th>Potencial</th>
+                                <th>Tensão de entrada</th>
+                                <th>Tensão de saida</th>
+                            </tr>
+                            <tr>
+                                <td><%=ip.getModelo()%></td>
+                                <td><%=ip.getFabricante()%></td>
+                                <td><%=ip.getPotencia()%></td>
+                                <td><%= ip.getTensaoEntrada()%></td>
+                                <td><%= ip.getTensaoSaida()%></td
+                                >
+                            </tr>
+                            <%
+                                    i++;
+                                }
+                            %>   
+                        </table>
+                    </div>
+                    
                     <hr/>
                     <h5 align="center"> <%= p.getStatus()%> </h5>
                     <hr/>

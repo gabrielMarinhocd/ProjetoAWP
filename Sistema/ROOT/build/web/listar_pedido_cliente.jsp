@@ -45,9 +45,12 @@
     </head>
     <body>
         <%@include file="banner_cliente.jsp" %>
-        <div class="central" id="central" >
-            <h2 align="center">Pedidos Pendentes<div align="right"> <a href="listar_pedidos_finalizado_c.jsp"><button class="btn btn-danger btn-sm" >Pedidos Finalizados e Cancelados</button></a> </div></h2>
-            <hr>
+        <div class="container container-padrao" >
+            <div id="pedidos-pendentes">
+                <h2 class="titulo-tabela">Pedidos Pendentes<span> <a href="listar_pedidos_finalizado_c.jsp"><button class="btn btn-danger btn-sm" >Pedidos Finalizados e Cancelados</button></a> </span></h2>
+            </div>
+            <hr/>
+            <br />
             <div class="to_show" > 
                 <% for (Pedido p : lista) {
 

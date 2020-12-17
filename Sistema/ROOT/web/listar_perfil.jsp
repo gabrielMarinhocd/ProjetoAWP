@@ -33,26 +33,28 @@
     </head>
     <body>
          <%@include file="banner.jsp" %>
-        <div class="central" id="central">
+        <div class="container container-padrao">
            <h2 >Lista de Perfis<div align="right"><a href="form_inserir_perfil.jsp"><button type="button" class="btn btn-secondary">Novo</button></a></div></h2>
-            <table align="center" class="table" id="table">
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Opções</th>
-                </tr>
-                <%for (Perfil p : lista) {
-                %>
-                <tr>
-                    <td><%=p.getId()%></td>
-                    <td><%=p.getNome()%></td>
-                    <td><a href="form_alterar_perfil.jsp?id=<%=p.getId()%>"><img src="imagens/icones/lapis_preto.png"/></a> <a href="#" onclick="excluir('<%=p.getNome()%>',<%=p.getId()%>)"><img src="imagens/icones/lixeira.png"/></a> <a href="form_gerenciar_menu_perfil.jsp?id=<%=p.getId()%>"><img src="imagens/icones/menu.png"/></a></td>
+           <div class="table-responsive-lg table-hover">
+               <table align="center" class="table" id="table">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Opções</th>
+                    </tr>
+                    <%for (Perfil p : lista) {
+                    %>
+                    <tr>
+                        <td><%=p.getId()%></td>
+                        <td><%=p.getNome()%></td>
+                        <td><a href="form_alterar_perfil.jsp?id=<%=p.getId()%>"><img src="imagens/icones/lapis_preto.png"/></a> <a href="#" onclick="excluir('<%=p.getNome()%>',<%=p.getId()%>)"><img src="imagens/icones/lixeira.png"/></a> <a href="form_gerenciar_menu_perfil.jsp?id=<%=p.getId()%>"><img src="imagens/icones/menu.png"/></a></td>
 
-                </tr>            
-                <%
-                    }
-                %>   
-            </table>
+                    </tr>            
+                    <%
+                        }
+                    %>   
+                </table>
+           </div>
         </div>
          <%@include file="rodape_cf.jsp" %> 
         <%@include file="importacoes2.jsp" %>

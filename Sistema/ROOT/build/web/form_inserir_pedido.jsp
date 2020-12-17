@@ -37,7 +37,7 @@
     </head>
     <body>
         <%@include file="banner_cliente.jsp" %>
-        <div style="margin: 3% 10% 0% 10%;" >
+        <div  id="form-novo-pedido" class="container container-padrao" >
             <div class="card">
                 <div class="card-body" style="font-size: 20px;" >
                     <h3 align="center">Cadastrar Produto</h3>
@@ -46,18 +46,21 @@
                     <hr>
                     <form  name="inserir_pedido" action="gerenciar_carrinho.do?op=add&red=catalogo" method="post">
                         <div class="form-row" >
-                            <div class="col-md-5">
+                            <div class="col-md-4 input">
                                 <label> Fabricante:</label> 
                                 <input name="fabricante" type="text" placeholder="Fabricante" class="form-control input-md" required="">
                                 <small id="passwordHelpInline" class="text-muted">
                                     Nome do fabricante.
                                 </small>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4 input">
                                 <label> Modelo:</label>
                                 <input name="modelo" type="text" placeholder="Modelo" class="form-control input-md" required="">
+                                 <small id="passwordHelpInline" class="text-muted">
+                                   
+                                </small>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 input">
                                 <label>Potencia: </label> 
                                 <input name="potencia" type="text" placeholder="Potencia" class="form-control input-md" required="">
                                 <small id="passwordHelpInline" class="text-muted">
@@ -65,19 +68,19 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <br/><div class="col-md-4">
+                            <br/><div class="col-md-4 input ">
                                 <label  >Tensão Entrada: </label> 
                                 <input name="tensaoEntrada" type="text" placeholder="Tensão Entrada" class="form-control input-md" required="">
                                 <small id="passwordHelpInline" class="text-muted">
                                 </small>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 input">
                                 <label  >Tensão Saida: </label> 
                                 <input name="tensaoSaida" type="text" placeholder="Tensão Saida" class="form-control input-md" required="">
                                 <small id="passwordHelpInline" class="text-muted">
                                 </small>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 input">
                                 <label  >Numero de Série: </label> 
                                 <input name="numeroSerie" type="text" placeholder="Numero de Série" class="form-control input-md" required="">
                                 <small id="passwordHelpInline" class="text-muted">
@@ -85,15 +88,16 @@
                                 </small>
                             </div>
                         </div>
+                        
                         <div class="form-row">
-                            <div class="col-md-6">
+                            <div class="col-md-4 input">
                                 <label  >Problema Reclamado: </label> 
                                 <textarea  name="problema" placeholder="Problema" class="form-control" aria-label="With textarea"></textarea>
                                 <small id="passwordHelpInline" class="text-muted">
                                     informe os problemas.
                                 </small>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4 input">
                                 <label >Tipo de Atendimento:</label> 
                                 <select name="meioPagamento" size="1" class="form-control input-md" required >
                                     <%for (TipoAtendimento tp : lista1) {
@@ -107,7 +111,7 @@
                                     Forma de Pagamento ou Garantia;
                                 </small>
                             </div>  
-                            <div class="col-md-3">
+                            <div class="col-md-4 input">
                                 <label >Local Desejado: </label> 
                                 <select name="local" size="1" class="form-control input-md" required >
                                  
@@ -125,7 +129,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="form-check form-check-inline">
+                        <div>
                             <input type="checkbox" class="form-check-input" required="" >
                             <small id="passwordHelpInline" class="text-muted">
                                 Se possível entregar  de segunda a sexta 
@@ -133,7 +137,7 @@
                             </small>
                         </div>
                         <br/>
-                        <div class="form-check form-check-inline">
+                        <div >
                             <input type="checkbox" class="form-check-input" required="" >
                             <small id="passwordHelpInline" class="text-muted">
                                 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter">

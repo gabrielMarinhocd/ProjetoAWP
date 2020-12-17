@@ -39,9 +39,16 @@
     </head>
     <body>
         <%@include file="banner.jsp" %>
-        <div class="central" id="central">
-            <h2 >Lista de Funcionarios <div align="right ">  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Novo</button></div></h2>
-            <table class="table" id="table">
+        <div class="container container-padrao">
+           <h2 class="titulo-tabela">Lista de Funcionarios 
+               <span>
+                   <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Novo</button>
+               </span>
+              </h2>
+            <hr>
+           
+            <div class="table-responsive-lg table-hover">
+                <table class="table" id="table">
                 <tr>
                     <th>Nome</th>
                     <th>Perfil</th>
@@ -133,6 +140,8 @@
                     }
                 %>   
             </table>
+            </div>
+            
         </div>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -160,7 +169,7 @@
                                 <input name="senha" type="password" placeholder="Senha" class="form-control input-md" required="">
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="perfil">Perfil <h11>*</h11></label>
+                                <label class="col-md-2 control-label" for="perfil">Perfil: <h11>*</h11></label>
                                 <select name="perfil" required class="form-control">
                                     <% ArrayList<Perfil> lista1 = new ArrayList<Perfil>();
                                         PerfilDAO pDAO = new PerfilDAO();

@@ -1,36 +1,39 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="modelo.LocalDAO"%>
 <%@page import="modelo.Local"%>
-<div class="conteiner">
-    <footer id="myFooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3 info">
-                    <div style="padding-top:12%; ">
-                        <img class="img-fluid" src="imagens/AWP_LOGO.png" alt=""/>
-                    </div>
-                </div> 
-                <div class="col-sm-3 info">
-                    <h5>Loja Principal</h5>
-                    <ul>
-                        <li><a target="_blank" href="https://goo.gl/maps/4pPRgH8PooZJkhmq9">Loja - AWP Brasil</a></li>
 
-                    </ul>
-                </div>
-                <div class="col-sm-3 info">
-                    <h5>Contato</h5>
-                    <b>Telefone:</b>+55 61 4104-9371<br/>
-                    <b>Email:</b> contato@awpbrasil.com.br<br/>
-                </div>
-                <div class="col-sm-3 info">
-                    <h5><a target="_blank" href="locais_tipo_atendimento.jsp">Endereços</a> </h5>
-                    <p>SOFN Sofn Q 4 Conjunto A, 5 - Quadra 3, Lote Zona Industrial, Brasília - DF, 70634-300</p>
-                </div>
-            </div>
+  <footer id="myFooter">
+    <div id="rodape" class="container">
+      <div class="row">
+        <div class="col-sm-3 info">
+          <div id="img-footer">
+            <img class=" img-fluid" src="https://atcawpbrasil.com.br/imagens/AWP_LOGO.png" alt="">
+          </div>
         </div>
-        <div style="background-color: #02060B; text-align: center; padding-bottom: 10px;">
-            Site produzido por Gabriel Marinho  <br/>Email de contato: gabrielmarinhodossantocd@gmail.com - Telefone: (61) 99367-2608   
+        <div class="col-sm-3 info">
+          <h5>Loja Principal</h5>
+          <a target="_blank" href="https://goo.gl/maps/4pPRgH8PooZJkhmq9">Loja - AWP Brasil</a></li>
         </div>
+        <div class="col-sm-3 info">
+          <h5>Contato</h5>
+          <b>Telefone:</b><a href="tel:+556141049371">+55 61 4104-9371</a> <br>
+          <b>Email:</b> <a href="mailto:contato@awpbrasil.com.br">contato@awpbrasil.com.br</a> <br>
+        </div>
+        <div class="col-sm-3 info">
+          <h5><a target="_blank" href="locais_tipo_atendimento.jsp">Endereços</a> </h5>
+          <p>SOFN Sofn Q 4 Conjunto A, 5 - Quadra 3, Lote Zona Industrial, Brasília - DF, 70634-300</p>
+        </div>
+      </div>
+    </div>
+    <div class="direitos">
+         Site produzido por Gabriel Marinho <br>
+         <a href="mailto:gabrielmarinhodossantocd@gmail.com"><img class="img-direitos" width="16px" height="16px"
+                 src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTQ2NyA2MWgtNDIyYy0yNC44MTMgMC00NSAyMC4xODctNDUgNDV2MzAwYzAgMjQuODEzIDIwLjE4NyA0NSA0NSA0NWg0MjJjMjQuODEzIDAgNDUtMjAuMTg3IDQ1LTQ1di0zMDBjMC0yNC44MTMtMjAuMTg3LTQ1LTQ1LTQ1em0tNjUuMTkgMzAtMTQ1LjgxIDEwOC43ODUtMTQ1LjgxLTEwOC43ODV6bS0zNTYuODEgMGgxNS4wMjFsMTg3LjAwOSAxMzkuNTIzYzIuNjYxIDEuOTg1IDUuODE1IDIuOTc3IDguOTcgMi45NzdzNi4zMDktLjk5MiA4Ljk3LTIuOTc3bDE4Ny4wMDktMTM5LjUyM2gxNS4wMjFjOC4yNjUgMCAxNC45ODkgNi43MTkgMTQuOTk5IDE0Ljk4MmwtMjI1Ljk5OSAxNjguNzk2LTIyNS45OTktMTY4Ljc5NmMuMDEtOC4yNjMgNi43MzQtMTQuOTgyIDE0Ljk5OS0xNC45ODJ6bTIwMi4wMjQgMjE0LjUxOGMyLjY2MiAxLjk4OCA1LjgxOSAyLjk4MiA4Ljk3NiAyLjk4MnM2LjMxNC0uOTk0IDguOTc2LTIuOTgybDE1Ny4wMjQtMTE3LjI4djIzMi43NjJoLTMzMnYtMjMyLjc2MnptLTIxNy4wMjQgMTAwLjQ4MnYtMjYyLjU3NWwzMCAyMi40MDd2MjU1LjE2OGgtMTVjLTguMjcxIDAtMTUtNi43MjktMTUtMTV6bTQzNyAxNWgtMTV2LTI1NS4xNjhsMzAtMjIuNDA3djI2Mi41NzVjMCA4LjI3MS02LjcyOSAxNS0xNSAxNXoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD48L2c+PC9zdmc+" /></a>
+         <a target="_blank"
+             href="https://api.whatsapp.com/send?phone=5561993672608&text=Ol%C3%A1%20gostei%20do%20site%20AWP%2C%20podemos%20conversar%20sobre%20ele%3F%20%20">
+             <img class="img-direitos" width="16px" height="16px"
+                 src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDY4MiA2ODIuNjY2NjkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTU0NC4zODY3MTkgOTMuMDA3ODEyYy01OS44NzUtNTkuOTQ1MzEyLTEzOS41MDM5MDctOTIuOTcyNjU1OC0yMjQuMzM1OTM4LTkzLjAwNzgxMi0xNzQuODA0Njg3IDAtMzE3LjA3MDMxMiAxNDIuMjYxNzE5LTMxNy4xNDA2MjUgMzE3LjExMzI4MS0uMDIzNDM3IDU1Ljg5NDUzMSAxNC41NzgxMjUgMTEwLjQ1NzAzMSA0Mi4zMzIwMzIgMTU4LjU1MDc4MWwtNDQuOTkyMTg4IDE2NC4zMzU5MzggMTY4LjEyMTA5NC00NC4xMDE1NjJjNDYuMzI0MjE4IDI1LjI2OTUzMSA5OC40NzY1NjIgMzguNTg1OTM3IDE1MS41NTA3ODEgMzguNjAxNTYyaC4xMzI4MTNjMTc0Ljc4NTE1NiAwIDMxNy4wNjY0MDYtMTQyLjI3MzQzOCAzMTcuMTMyODEyLTMxNy4xMzI4MTIuMDM1MTU2LTg0Ljc0MjE4OC0zMi45MjE4NzUtMTY0LjQxNzk2OS05Mi44MDA3ODEtMjI0LjM1OTM3NnptLTIyNC4zMzU5MzggNDg3LjkzMzU5NGgtLjEwOTM3NWMtNDcuMjk2ODc1LS4wMTk1MzEtOTMuNjgzNTk0LTEyLjczMDQ2OC0xMzQuMTYwMTU2LTM2Ljc0MjE4N2wtOS42MjEwOTQtNS43MTQ4NDQtOTkuNzY1NjI1IDI2LjE3MTg3NSAyNi42Mjg5MDctOTcuMjY5NTMxLTYuMjY5NTMyLTkuOTcyNjU3Yy0yNi4zODY3MTgtNDEuOTY4NzUtNDAuMzIwMzEyLTkwLjQ3NjU2Mi00MC4yOTY4NzUtMTQwLjI4MTI1LjA1NDY4OC0xNDUuMzMyMDMxIDExOC4zMDQ2ODgtMjYzLjU3MDMxMiAyNjMuNjk5MjE5LTI2My41NzAzMTIgNzAuNDA2MjUuMDIzNDM4IDEzNi41ODk4NDQgMjcuNDc2NTYyIDE4Ni4zNTU0NjkgNzcuMzAwNzgxczc3LjE1NjI1IDExNi4wNTA3ODEgNzcuMTMyODEyIDE4Ni40ODQzNzVjLS4wNjI1IDE0NS4zNDM3NS0xMTguMzA0Njg3IDI2My41OTM3NS0yNjMuNTkzNzUgMjYzLjU5Mzc1em0xNDQuNTg1OTM4LTE5Ny40MTc5NjhjLTcuOTIxODc1LTMuOTY4NzUtNDYuODgyODEzLTIzLjEzMjgxMy01NC4xNDg0MzgtMjUuNzgxMjUtNy4yNTc4MTItMi42NDQ1MzItMTIuNTQ2ODc1LTMuOTYwOTM4LTE3LjgyNDIxOSAzLjk2ODc1LTUuMjg1MTU2IDcuOTI5Njg3LTIwLjQ2ODc1IDI1Ljc4MTI1LTI1LjA5Mzc1IDMxLjA2NjQwNi00LjYyNSA1LjI4OTA2Mi05LjI0MjE4NyA1Ljk1MzEyNS0xNy4xNjc5NjggMS45ODQzNzUtNy45MjU3ODItMy45NjQ4NDQtMzMuNDU3MDMyLTEyLjMzNTkzOC02My43MjY1NjMtMzkuMzMyMDMxLTIzLjU1NDY4Ny0yMS4wMTE3MTktMzkuNDU3MDMxLTQ2Ljk2MDkzOC00NC4wODIwMzEtNTQuODkwNjI2LTQuNjE3MTg4LTcuOTM3NS0uMDM5MDYyLTExLjgxMjUgMy40NzY1NjItMTYuMTcxODc0IDguNTc4MTI2LTEwLjY1MjM0NCAxNy4xNjc5NjktMjEuODIwMzEzIDE5LjgwODU5NC0yNy4xMDU0NjkgMi42NDQ1MzItNS4yODkwNjMgMS4zMjAzMTMtOS45MTc5NjktLjY2NDA2Mi0xMy44ODI4MTMtMS45NzY1NjMtMy45NjQ4NDQtMTcuODI0MjE5LTQyLjk2ODc1LTI0LjQyNTc4Mi01OC44Mzk4NDQtNi40Mzc1LTE1LjQ0NTMxMi0xMi45NjQ4NDMtMTMuMzU5Mzc0LTE3LjgzMjAzMS0xMy42MDE1NjItNC42MTcxODctLjIzMDQ2OS05LjkwMjM0My0uMjc3MzQ0LTE1LjE4NzUtLjI3NzM0NC01LjI4MTI1IDAtMTMuODY3MTg3IDEuOTgwNDY5LTIxLjEzMjgxMiA5LjkxNzk2OS03LjI2MTcxOSA3LjkzMzU5NC0yNy43MzA0NjkgMjcuMTAxNTYzLTI3LjczMDQ2OSA2Ni4xMDU0NjlzMjguMzk0NTMxIDc2LjY4MzU5NCAzMi4zNTU0NjkgODEuOTcyNjU2YzMuOTYwOTM3IDUuMjg5MDYyIDU1Ljg3ODkwNiA4NS4zMjgxMjUgMTM1LjM2NzE4NyAxMTkuNjQ4NDM4IDE4LjkwNjI1IDguMTcxODc0IDMzLjY2NDA2MyAxMy4wNDI5NjggNDUuMTc1NzgyIDE2LjY5NTMxMiAxOC45ODQzNzQgNi4wMzEyNSAzNi4yNTM5MDYgNS4xNzk2ODggNDkuOTEwMTU2IDMuMTQwNjI1IDE1LjIyNjU2Mi0yLjI3NzM0NCA0Ni44Nzg5MDYtMTkuMTcxODc1IDUzLjQ4ODI4MS0zNy42Nzk2ODcgNi42MDE1NjMtMTguNTExNzE5IDYuNjAxNTYzLTM0LjM3NSA0LjYxNzE4Ny0zNy42ODM1OTQtMS45NzY1NjItMy4zMDQ2ODgtNy4yNjE3MTgtNS4yODUxNTYtMTUuMTgzNTkzLTkuMjUzOTA2em0wIDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI2ZmZmZmZiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiI+PC9wYXRoPjwvZz48L3N2Zz4=" />
+         </a>
+     </div>
 
-    </footer>
-</div>          
+  </footer>

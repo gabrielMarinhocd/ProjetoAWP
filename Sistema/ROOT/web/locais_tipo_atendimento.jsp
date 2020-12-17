@@ -28,31 +28,31 @@
 <html>
     <head>
         <%@include file="link_inicio.jsp" %>
-        <script type="text/javascript">
-            alert("O sistema tem um funcionamento melhor quando o aparelho está na horizontal! ");
-        </script>
     </head>
     <body>
         <%@include file="banner_inicio.jsp" %>
-        <div style="margin: 3% 10% 3% 10%;" >
+        <div class="container container-padrao" >
             <div class="card">
                 <div class="card-body" >
                     <h3>Listas de locais e endereços</h3>
-                    <table class="table table-hover table-responsive-md" id="table">
-                        <tr>
-                            <th>Nome</th>
-                            <th>Endereço</th>
-                            <th>Link</th>
-                        </tr>
-                        <%for (Local l : lista) {
-                        %>
-                        <tr>
-                            <td><%=l.getNome()%></td>
-                            <td><%=l.getEndereco()%></td>
-                            <td><%=l.getLink()%> </td>
-                        </tr>
-                        <% }%>
-                    </table>
+                    <div class="table-responsive-lg table-hover">
+                        <table class="table table-hover table-responsive-md" id="table">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Endereço</th>
+                                <th>Link</th>
+                            </tr>
+                            <%for (Local l : lista) {
+                            %>
+                            <tr>
+                                <td><%=l.getNome()%></td>
+                                <td><%=l.getEndereco()%></td>
+                                <td><%=l.getLink()%> </td>
+                            </tr>
+                            <% }%>
+                        </table>
+                    </div>
+                    
                 </div>
             </div>
         </div>

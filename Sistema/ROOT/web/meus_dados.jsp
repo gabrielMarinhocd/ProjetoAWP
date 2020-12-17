@@ -25,8 +25,8 @@
     </head>
     <body>
         <%@include file="banner_cliente.jsp" %>
-        <div class="central" id="central">
-            <h2>Meus dados <div align="right"> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Alterar</button></div></h2>
+        <div class="container container-padrao">
+            <h2 class="titulo-tabela">Meus dados <span > <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Alterar</button></span></h2>
             <table class="table">
                 <tr><th >Nome:</th><td ><%=c.getNome()%></td></tr>
                 <tr><th >Cpf/cnpj:</th><td ><%=c.getCpfCnpj()%></td></tr>

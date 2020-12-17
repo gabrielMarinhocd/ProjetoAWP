@@ -48,7 +48,7 @@
     </head>
     <body>
         <%@include file="banner.jsp" %>
-        <div class="central" id="central">
+        <div class="container container-padrao">
             <div class="card">
                 <div class="card-body">
                     <h2 align="center">Lista de Pedidos
@@ -62,102 +62,105 @@
                     <hr>
 
                     <h3 align="left">Lista de Pedidos (Pendentes) </h3>
-                    <table class="table table-responsive-sm table-hover" >
-                        <tr>
-                            <th>O.S</th>
-                            <th>Cliente</th>
-                            <th>Data Pedido</th>
-                            <th>Valor Total</th>
-                            <th></th>
-                            <th>Opções </th>   
-                        </tr>
-                        <% for (Pedido p : lista) {
-                                if (p.getSituacao() == null && p.getDataPagamento() == null) {
-                                    if (p.getFuncionario().getId() > 0 && p.getDataPagamento() == null) {
-                        %>
-                        <tr>
-                            <td><%= p.getId()%></td>
-                            <td><%=p.getCliente().getNome()%></td>
-                            <td ><%=sdf.format(p.getData())%> </td>
-                            <td> <%
-                                if (p.getOkValor() == null && p.getDataEntrega() != null && p.getValor() != 0.0 && p.getMaoObra() != 0.0) {
-                                %>
-                                <small>Insira os materias e clique em "concluir" na parte superior da página de materias.</small> 
+                    <div class="table-responsive-lg table-hover">
+                        <table class="table table-responsive-sm table-hover" >
+                            <tr>
+                                <th>O.S</th>
+                                <th>Cliente</th>
+                                <th>Data Pedido</th>
+                                <th>Valor Total</th>
+                                <th></th>
+                                <th>Opções </th>   
+                            </tr>
+                            <% for (Pedido p : lista) {
+                                    if (p.getSituacao() == null && p.getDataPagamento() == null) {
+                                        if (p.getFuncionario().getId() > 0 && p.getDataPagamento() == null) {
+                            %>
+                            <tr>
+                                <td><%= p.getId()%></td>
+                                <td><%=p.getCliente().getNome()%></td>
+                                <td ><%=sdf.format(p.getData())%> </td>
+                                <td> <%
+                                    if (p.getOkValor() == null && p.getDataEntrega() != null && p.getValor() != 0.0 && p.getMaoObra() != 0.0) {
+                                    %>
+                                    <small>Insira os materias e clique em "concluir" na parte superior da página de materias.</small> 
 
-                                <% } else if (p.getValor() > 0 && p.getOkValor() != null) {%>
-                                <%=df.format(p.getValor())%>
-                                <% }
-                                    if (p.getDataEntrega() != null && p.getValor() == 0.0) { %>
-                                Insira os materiais 
-                                <% } else if (p.getValor() == 0.0) { %>
-                                Em analise
-                                <% } %>
-                            </td>
-                            <td>
-                                <%if (p.getAceitoValor() != null && p.getFuncionario().getId() == 0) {%>
-                                <a href="confirma_servico.jsp?id=<%= p.getId()%>&funcionario=<%=fLogado.getId()%>&op=0&login=0"><button type="button" class="btn btn-outline-warning btn-sm btn-sm">Produto Pronto!</button></a>
-                                <% } else if (p.getFuncionario().getId() > 0 && p.getDataPagamento() == null) {%>
-                                <a data-toggle="modal" data-target="#formaPagamento" data-whatever="@mdo"><button type="button" class="btn btn-outline-info btn-sm btn-sm">Finalizar Pedido</button></a>
+                                    <% } else if (p.getValor() > 0 && p.getOkValor() != null) {%>
+                                    <%=df.format(p.getValor())%>
+                                    <% }
+                                        if (p.getDataEntrega() != null && p.getValor() == 0.0) { %>
+                                    Insira os materiais 
+                                    <% } else if (p.getValor() == 0.0) { %>
+                                    Em analise
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <%if (p.getAceitoValor() != null && p.getFuncionario().getId() == 0) {%>
+                                    <a href="confirma_servico.jsp?id=<%= p.getId()%>&funcionario=<%=fLogado.getId()%>&op=0&login=0"><button type="button" class="btn btn-outline-warning btn-sm btn-sm">Produto Pronto!</button></a>
+                                    <% } else if (p.getFuncionario().getId() > 0 && p.getDataPagamento() == null) {%>
+                                    <a data-toggle="modal" data-target="#formaPagamento" data-whatever="@mdo"><button type="button" class="btn btn-outline-info btn-sm btn-sm">Finalizar Pedido</button></a>
 
-                                <div class="modal fade" id="formaPagamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Finalizar Pedido</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form name="inserir_material" action="confirma_pagamento.jsp?op=0&login=0" method="post">
-                                                    <input type="hidden" value="<%=p.getId()%>" name="id"/>
-                                                    <div class="form-group">
-                                                        <label class="col-form-labell" for="valor">Forma de pagamento ou Tipo de atendimento:</label>  
-                                                        <select name="formaPagamento" size="1" class="form-control input-md" required >
-                                                            <option value="DINHEIRO">DINHEIRO</option>
-                                                            <option value="BOLETO">BOLETO</option>
-                                                            <option value="CARTÂO">CARTÂO</option>
-                                                            <%for (TipoAtendimento tp : lista1) {
-                                                                    if (tp.getSituacao().equals("ativo")) {
-                                                            %>
-                                                            <option value="<%=tp.getNome()%> "><%=tp.getNome()%></option>
-                                                            <% }
-                                                                 } %>
-                                                        </select>
-                                                        <small id="passwordHelpInline" class="text-muted">
-                                                            Adicione forma de Pagamento;
-                                                        </small>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-primary">Salvar</button> 
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                                    </div>    
-                                                </form>
+                                    <div class="modal fade" id="formaPagamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Finalizar Pedido</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form name="inserir_material" action="confirma_pagamento.jsp?op=0&login=0" method="post">
+                                                        <input type="hidden" value="<%=p.getId()%>" name="id"/>
+                                                        <div class="form-group">
+                                                            <label class="col-form-labell" for="valor">Forma de pagamento ou Tipo de atendimento:</label>  
+                                                            <select name="formaPagamento" size="1" class="form-control input-md" required >
+                                                                <option value="DINHEIRO">DINHEIRO</option>
+                                                                <option value="BOLETO">BOLETO</option>
+                                                                <option value="CARTÂO">CARTÂO</option>
+                                                                <%for (TipoAtendimento tp : lista1) {
+                                                                        if (tp.getSituacao().equals("ativo")) {
+                                                                %>
+                                                                <option value="<%=tp.getNome()%> "><%=tp.getNome()%></option>
+                                                                <% }
+                                                                     } %>
+                                                            </select>
+                                                            <small id="passwordHelpInline" class="text-muted">
+                                                                Adicione forma de Pagamento;
+                                                            </small>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-primary">Salvar</button> 
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                        </div>    
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div> 
+                                    </div> 
 
-                                <% }%>
-                                <% if (p.getDataEntrega() == null) {%>
+                                    <% }%>
+                                    <% if (p.getDataEntrega() == null) {%>
 
-                                <a href="comfirma_entrega.jsp?id=<%= p.getId()%>&op=0&login=0"><button type="button" class="btn btn-outline-warning btn-sm btn-sm">Confirmar entrega</button></a> 
-                                <% }%>
-                            </td> 
-                            <td>
-                                <a href="mostrar_pedido_fc.jsp?id=<%=p.getId()%>&idPedido=<%=p.getId()%>&op=0&login=0">
-                                    <button type="button" class="btn btn-outline-success btn-sm">Mais...</button></a>  
-                                    <% if (p.getDataEntrega() != null) {%>
-                                <a href="listar_material.jsp?id=<%= p.getId()%>&op=0&login=0"><button type="button" class="btn btn-outline-warning btn-sm btn-sm">Materiais</button></a>   
-                                <% } %>
-                            </td>    
-                        </tr>   
-                        <%
+                                    <a href="comfirma_entrega.jsp?id=<%= p.getId()%>&op=0&login=0"><button type="button" class="btn btn-outline-warning btn-sm btn-sm">Confirmar entrega</button></a> 
+                                    <% }%>
+                                </td> 
+                                <td>
+                                    <a href="mostrar_pedido_fc.jsp?id=<%=p.getId()%>&idPedido=<%=p.getId()%>&op=0&login=0">
+                                        <button type="button" class="btn btn-outline-success btn-sm">Mais...</button></a>  
+                                        <% if (p.getDataEntrega() != null) {%>
+                                    <a href="listar_material.jsp?id=<%= p.getId()%>&op=0&login=0"><button type="button" class="btn btn-outline-warning btn-sm btn-sm">Materiais</button></a>   
+                                    <% } %>
+                                </td>    
+                            </tr>   
+                            <%
+                                        }
                                     }
                                 }
-                            }
-                        %>   
-                    </table>
+                            %>   
+                        </table>
+                    </div>
+                    
                     <a href="javascript:history.back()">  <button class="btn btn-outline-secondary btn-sm" >voltar</button></a>
                 </div>
             </div>

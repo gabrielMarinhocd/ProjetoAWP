@@ -57,7 +57,7 @@
     </head>
     <body>
         <%@include file="banner.jsp" %>
-        <div class="container" style="margin-top: 2%; ">
+        <div class="container container-padrao">
             <div class="card" >
                 <div class="card-body" style="padding: 2% 2% 2% 2%;" >
                     <h3>Lista de Materiais
@@ -81,81 +81,83 @@
                         </div>
                         <% } %>
                     </h3>
-
-                    <table class="table table-hover table-responsive-md" id="table">
-                        <tr>
-                            <th>Nome</th>
-                            <th>Preço da Uni.</th>
-                            <th>Quantidade</th>
-                            <th>Total </th>
-                                <% if (p.getOkValor() == null && p.getSituacao() == null) { %>
-                            <th>Opções</th>
-                                <% } else { %>
-                            <th></th>
-                                <% } %>
-                        </tr>
-                        <%  for (Material m : lista) {
-                                if (id == m.getPedido().getId()) {
-                        %>
-                        <tr>
-                            <td><%=m.getNome()%></td>
-                            <td><%=df.format(m.getValor())%></td>
-                            <td><%=m.getQuantidade()%></td>
-                            <td> <%= df.format(preco = ((m.getValor() * m.getQuantidade())))%></td>
-                            <td>
-                                <% if (p.getOkValor() == null && p.getSituacao() == null) {%>
-                                <a href="#" onclick="excluir('<%=m.getNome()%>',<%=m.getId()%>, <%=id%>, <%=m.getValor()%>, <%=m.getQuantidade()%>, <%=p.getValor()%>,<%=op%>,<%=login%>)"><img src="imagens/icones/lixeira.png" /></a>
-                                <a data-toggle="modal" data-target="#alterar<%=m.getId()%>" data-whatever="@mdo" ><img src="imagens/icones/lapis_preto.png" /></a>
-                                    <% }%>
-                                <div class="modal fade" id="alterar<%=m.getId()%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Alterar Material </h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form name="inserir_material" action="allterar_material.do?op=<%=op%>&login=<%=login%> " method="post">
-                                                    <div class="form-group">
-                                                        <input type="hidden" value="<%=m.getId()%>" name="id"/>
-                                                        <input type="hidden" value="<%=p.getId()%>" name="id_pedido"/>
-                                                        <input type="hidden" value="<%=p.getValor()%>" name="preco1"/>
-                                                        <input type="hidden" value="<%=m.getValor()%>" name="vAntigo"/>
-                                                        <input type="hidden" value="<%=m.getQuantidade()%>" name="qtdAntigo"/>
-                                                        <label class="col-form-label" for="titulo">Descrição:</label>   
-                                                        <input name="nome" value="<%=m.getNome()%>" type="text" placeholder="Material" class="form-control input-md" required="">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-form-labell" for="quantidade">Quantidade:</label>  
-                                                        <input name="quantidade" type="number" value="<%=m.getQuantidade()%>"  placeholder="Quantidade" class="form-control input-md" required >
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-form-labell" for="valor">Preço Equipamento:</label>  
-                                                        <input name="valor" value="<%=m.getValor()%>"  type="number" placeholder="1.00" step="0.01" min="0" max="1000" class="form-control input-md" required>
-                                                        <small id="passwordHelpInline" class="text-muted">
-                                                            Usar ponto no lugar da virgula Ex: R$000.00
-                                                        </small>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-primary">Salvar</button> 
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                                    </div>    
-                                                </form>
+                    <div class="table-responsive-lg table-hover">
+                        <table class="table " id="table">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Preço da Uni.</th>
+                                <th>Quantidade</th>
+                                <th>Total </th>
+                                    <% if (p.getOkValor() == null && p.getSituacao() == null) { %>
+                                <th>Opções</th>
+                                    <% } else { %>
+                                <th></th>
+                                    <% } %>
+                            </tr>
+                            <%  for (Material m : lista) {
+                                    if (id == m.getPedido().getId()) {
+                            %>
+                            <tr>
+                                <td><%=m.getNome()%></td>
+                                <td><%=df.format(m.getValor())%></td>
+                                <td><%=m.getQuantidade()%></td>
+                                <td> <%= df.format(preco = ((m.getValor() * m.getQuantidade())))%></td>
+                                <td>
+                                    <% if (p.getOkValor() == null && p.getSituacao() == null) {%>
+                                    <a href="#" onclick="excluir('<%=m.getNome()%>',<%=m.getId()%>, <%=id%>, <%=m.getValor()%>, <%=m.getQuantidade()%>, <%=p.getValor()%>,<%=op%>,<%=login%>)"><img src="imagens/icones/lixeira.png" /></a>
+                                    <a data-toggle="modal" data-target="#alterar<%=m.getId()%>" data-whatever="@mdo" ><img src="imagens/icones/lapis_preto.png" /></a>
+                                        <% }%>
+                                    <div class="modal fade" id="alterar<%=m.getId()%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Alterar Material </h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form name="inserir_material" action="allterar_material.do?op=<%=op%>&login=<%=login%> " method="post">
+                                                        <div class="form-group">
+                                                            <input type="hidden" value="<%=m.getId()%>" name="id"/>
+                                                            <input type="hidden" value="<%=p.getId()%>" name="id_pedido"/>
+                                                            <input type="hidden" value="<%=p.getValor()%>" name="preco1"/>
+                                                            <input type="hidden" value="<%=m.getValor()%>" name="vAntigo"/>
+                                                            <input type="hidden" value="<%=m.getQuantidade()%>" name="qtdAntigo"/>
+                                                            <label class="col-form-label" for="titulo">Descrição:</label>   
+                                                            <input name="nome" value="<%=m.getNome()%>" type="text" placeholder="Material" class="form-control input-md" required="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-labell" for="quantidade">Quantidade:</label>  
+                                                            <input name="quantidade" type="number" value="<%=m.getQuantidade()%>"  placeholder="Quantidade" class="form-control input-md" required >
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-labell" for="valor">Preço Equipamento:</label>  
+                                                            <input name="valor" value="<%=m.getValor()%>"  type="number" placeholder="1.00" step="0.01" min="0" max="1000" class="form-control input-md" required>
+                                                            <small id="passwordHelpInline" class="text-muted">
+                                                                Usar ponto no lugar da virgula Ex: R$000.00
+                                                            </small>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-primary">Salvar</button> 
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                        </div>    
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
 
-                            </td>
-                        </tr>            
-                        <%
+                                </td>
+                            </tr>            
+                            <%
+                                    }
                                 }
-                            }
-                        %>   
-                    </table>
+                            %>   
+                        </table>
+                    </div>
+                    
                     <hr>
                     <div > 
                         <b>Descrição:</b><% if (p.getDescricao() == null) { %> <% } else {%> <%=p.getDescricao()%>  <%}%>

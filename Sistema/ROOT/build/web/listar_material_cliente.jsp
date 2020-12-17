@@ -49,31 +49,34 @@
     </head>
     <body>
         <%@include file="banner_cliente.jsp" %>
-        <div class="container" style="margin-top: 2%; ">
+        <div class="container container-padrao">
             <div class="card" >
                 <div class="card-body" style="padding: 2% 2% 2% 2%;" >
                     <h2 >Lista de Material  </h2>
-                    <table class="table table-hover table-responsive-md" id="table">
-                        <tr>
-                            <th>Nome</th>
-                            <th>Quantidade</th>
-                            <th>Preço do Equipamento</th>
-                            <th>Total</th>
-                        </tr>
-                        <%for (Material m : lista) {
-                                if (id == m.getPedido().getId()) {
-                        %>
-                        <tr>
-                            <td><%=m.getNome()%></td>
-                            <td><%=m.getQuantidade()%></td>
-                            <td><%=df.format(m.getValor())%></td>
-                            <td> <%= df.format(preco = ((m.getValor() * m.getQuantidade())))%></td>
-                        </tr>            
-                        <%
+                    <div class="table-responsive-lg table-hover">
+                         <table class="table table-hover table-responsive-md" id="table">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Quantidade</th>
+                                <th>Preço do Equipamento</th>
+                                <th>Total</th>
+                            </tr>
+                            <%for (Material m : lista) {
+                                    if (id == m.getPedido().getId()) {
+                            %>
+                            <tr>
+                                <td><%=m.getNome()%></td>
+                                <td><%=m.getQuantidade()%></td>
+                                <td><%=df.format(m.getValor())%></td>
+                                <td> <%= df.format(preco = ((m.getValor() * m.getQuantidade())))%></td>
+                            </tr>            
+                            <%
+                                    }
                                 }
-                            }
-                        %>   
-                    </table>
+                            %>   
+                        </table>
+                    </div>
+                   
                     <hr>
                     <div > 
                         <b>Descrição:</b><% if (p.getDescricao() == null) { %><% } else {%> <%=p.getDescricao()%>  <%}%>

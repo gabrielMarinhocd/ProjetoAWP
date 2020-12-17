@@ -35,9 +35,11 @@
     </head>
     <body>
         <%@include file="banner.jsp" %> 
-        <div class="container" style="margin-top: 2%">
+        <div class="container container-padrao" >
             <h3 >Lista de Clientes</h3>
-            <table class="table table-hover table-responsive-lg" >
+            <hr />
+            <div class="table-responsive-lg table-hover">
+                    <table class="table table-hover table-responsive-lg" >
                 <tr>
                     <th>CPF/CNPJ</th>
                     <th>Nome</th>
@@ -123,6 +125,8 @@
                     }
                 %>   
             </table>
+            </div>
+            
         </div>
         <%@include file="rodape_cf.jsp" %> 
         <%@include file="importacoes2.jsp" %>

@@ -35,7 +35,7 @@
             }
         %>
 
-        <div style="margin: 8% 10% 10% 10%;" >
+        <div class="container container-padrao" id="catalago" >
             <div class="card">
                 <div class="card-body" style="font-size: 20px;" >
                     <% if (carrinho.getItens().size() >= 1) {%>
@@ -44,8 +44,8 @@
                     <h3> </h3>
                     <% } %>
 
-                    <div align="center">
-                       <img style=" max-width: 330px; max-height: 290px;" src="imagens/AWP_LOGO.png" alt=""/>
+                    <div id="img-quem-somos">
+                        <img class="img-fluid" src="https://atcawpbrasil.com.br/imagens/AWP_LOGO.png" alt="">
                     </div>
                     <hr>
                     <div align="center" >

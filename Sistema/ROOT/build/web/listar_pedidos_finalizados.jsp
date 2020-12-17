@@ -45,9 +45,9 @@
     </head>
     <body>
         <%@include file="banner.jsp" %>
-        <div class="container" style="margin-top:3%;" >
+        <div class="container container-padrao" >
             <div class="card">
-                <div class="card-body" style="font-size: 20px;"  >
+                <div class="card-body"  >
                     <div class="ls-tabs-btn-nav">
                         <div align="center" >
                             <div class="form-check form-check-inline">
@@ -64,46 +64,49 @@
                            <hr>
                             <div id="tab1" class="ls-tab-content">
                                 <h3>Equipamento Entregue</h3>
-                                <table class="table table-responsive-sm table-hover" >
-                                    <tr>
-                                        <th>O.S</th>
-                                        <th>Cliente</th>
-                                        <th>Data Pedido</th>
-                                        <th>Valor</th>
-                                        <th>Situação</th>  
-                                        <th>Opções</th>
-                                        <th> </th>   
-                                    </tr>
-                                    <% int i5 = 0;
-                                        for (Pedido p : lista) {
-                                            if (p.getStatus().equals("Finalizado")) {
-                                    %>
-                                    <tr>
-                                        <td><%= p.getId()%></td>
-                                        <td><%=p.getCliente().getNome()%></td>
-                                        <td ><%=sdf.format(p.getData())%> </td>
-                                        <td> <%
-                                            if (p.getValor() > 0) {
-                                            %>
-                                            <%=df.format(p.getValor())%>
-                                            <% } else if (p.getValor() == 0) {%>
-                                            Em analise
-                                            <% }%>
-                                        </td>
-                                        <td>
-                                            <%= p.getSituacao()%>
-                                        </td>
-                                        <td>
-                                            <a href="mostrar_pedido_fc.jsp?id=<%=p.getId()%>&idPedido=<%=p.getId()%>&op=2&login=0">
-                                                <button type="button" class="btn btn-outline-success btn-sm">ver...</button></a>  
-                                            <a href="ver_material.jsp?id=<%= p.getId()%>&op=2&login=0"><button type="button" class="btn btn-outline-warning btn-sm btn-sm">Materiais</button></a>                 
-                                        </td>    
-                                    </tr>   
-                                    <% i5++;
+                                <div class="table-responsive-lg table-hover">
+                                    <table class="table table-responsive-sm table-hover" >
+                                        <tr>
+                                            <th>O.S</th>
+                                            <th>Cliente</th>
+                                            <th>Data Pedido</th>
+                                            <th>Valor</th>
+                                            <th>Situação</th>  
+                                            <th>Opções</th>
+                                            <th> </th>   
+                                        </tr>
+                                        <% int i5 = 0;
+                                            for (Pedido p : lista) {
+                                                if (p.getStatus().equals("Finalizado")) {
+                                        %>
+                                        <tr>
+                                            <td><%= p.getId()%></td>
+                                            <td><%=p.getCliente().getNome()%></td>
+                                            <td ><%=sdf.format(p.getData())%> </td>
+                                            <td> <%
+                                                if (p.getValor() > 0) {
+                                                %>
+                                                <%=df.format(p.getValor())%>
+                                                <% } else if (p.getValor() == 0) {%>
+                                                Em analise
+                                                <% }%>
+                                            </td>
+                                            <td>
+                                                <%= p.getSituacao()%>
+                                            </td>
+                                            <td>
+                                                <a href="mostrar_pedido_fc.jsp?id=<%=p.getId()%>&idPedido=<%=p.getId()%>&op=2&login=0">
+                                                    <button type="button" class="btn btn-outline-success btn-sm">ver...</button></a>  
+                                                <a href="ver_material.jsp?id=<%= p.getId()%>&op=2&login=0"><button type="button" class="btn btn-outline-warning btn-sm btn-sm">Materiais</button></a>                 
+                                            </td>    
+                                        </tr>   
+                                        <% i5++;
+                                                }
                                             }
-                                        }
-                                    %>   
-                                </table>
+                                        %>   
+                                    </table>
+                                </div>
+                                
                                 <h5 align="right"> Nº pedidos = <%=i5%></h5>
                             </div>
 
@@ -111,91 +114,97 @@
 
                             <div id="tab2" class="ls-tab-content">
                                 <h3> Pedidos Cancelados</h3>
-                                <table class="table table-responsive-sm table-hover" >
-                                    <tr>
-                                        <th>O.S</th>
-                                        <th>Cliente</th>
-                                        <th>Data Pedido</th>
-                                        <th>Valor</th>
-                                        <th>Situação</th>  
-                                        <th>Opções</th>
-                                        <th> </th>   
-                                    </tr>
-                                    <% int i6 = 0;
-                                        for (Pedido p : lista) {
-                                            if (p.getStatus().equals("Cancelado")) {
-                                    %>
-                                    <tr>
-                                        <td><%= p.getId()%></td>
-                                        <td><%=p.getCliente().getNome()%></td>
-                                        <td ><%=sdf.format(p.getData())%> </td>
-                                        <td> <%
-                                            if (p.getValor() > 0) {
-                                            %>
-                                            <%=df.format(p.getValor())%>
-                                            <% } else if (p.getValor() == 0) {%>
-                                            Em analise
-                                            <% }%>
-                                        </td>
-                                        <td>
-                                            <%= p.getSituacao()%>
-                                        </td>
-                                        <td>
-                                            <a href="mostrar_pedido_fc.jsp?id=<%=p.getId()%>&idPedido=<%=p.getId()%>&op=2&login=0">
-                                                <button type="button" class="btn btn-outline-success btn-sm">ver...</button></a>  
-                                            <a href="ver_material.jsp?id=<%= p.getId()%>&op=2&login=0"><button type="button" class="btn btn-outline-warning btn-sm btn-sm">Materiais</button></a>                 
-                                        </td>    
-                                    </tr>   
-                                    <% i6++;
+                                <div class="table-responsive-lg table-hover">
+                                    <table class="table" >
+                                        <tr>
+                                            <th>O.S</th>
+                                            <th>Cliente</th>
+                                            <th>Data Pedido</th>
+                                            <th>Valor</th>
+                                            <th>Situação</th>  
+                                            <th>Opções</th>
+                                            <th> </th>   
+                                        </tr>
+                                        <% int i6 = 0;
+                                            for (Pedido p : lista) {
+                                                if (p.getStatus().equals("Cancelado")) {
+                                        %>
+                                        <tr>
+                                            <td><%= p.getId()%></td>
+                                            <td><%=p.getCliente().getNome()%></td>
+                                            <td ><%=sdf.format(p.getData())%> </td>
+                                            <td> <%
+                                                if (p.getValor() > 0) {
+                                                %>
+                                                <%=df.format(p.getValor())%>
+                                                <% } else if (p.getValor() == 0) {%>
+                                                Em analise
+                                                <% }%>
+                                            </td>
+                                            <td>
+                                                <%= p.getSituacao()%>
+                                            </td>
+                                            <td>
+                                                <a href="mostrar_pedido_fc.jsp?id=<%=p.getId()%>&idPedido=<%=p.getId()%>&op=2&login=0">
+                                                    <button type="button" class="btn btn-outline-success btn-sm">ver...</button></a>  
+                                                <a href="ver_material.jsp?id=<%= p.getId()%>&op=2&login=0"><button type="button" class="btn btn-outline-warning btn-sm btn-sm">Materiais</button></a>                 
+                                            </td>    
+                                        </tr>   
+                                        <% i6++;
+                                                }
                                             }
-                                        }
-                                    %>   
-                                </table>
+                                        %>   
+                                    </table>
+                                </div>
+                                
                                 <h5 align="right"> Nº total pedidos = <%=i6%></h5> 
                             </div>
                             
                             <div id="tab3" class="ls-tab-content">
                                 <h3> Lista de Pedidos (Valor não aprovado)</h3>
-                                <table class="table table-responsive-sm table-hover" >
-                                    <tr>
-                                        <th>O.S</th>
-                                        <th>Cliente</th>
-                                        <th>Data Pedido</th>
-                                        <th>Valor</th>
-                                        <th>Situação</th>  
-                                        <th>Opções</th>
-                                        <th> </th>   
-                                    </tr>
-                                    <% int i3 = 0;
-                                        for (Pedido p : lista) {
-                                            if (p.getStatus().equals("Valor não aprovado")) {
-                                    %>
-                                    <tr>
-                                        <td><%= p.getId()%></td>
-                                        <td><%=p.getCliente().getNome()%></td>
-                                        <td ><%=sdf.format(p.getData())%> </td>
-                                        <td> <%
-                                            if (p.getValor() > 0) {
-                                            %>
-                                            <%=df.format(p.getValor())%>
-                                            <% } else if (p.getValor() == 0) {%>
-                                            Em analise
-                                            <% }%>
-                                        </td>
-                                        <td>
-                                            <%= p.getSituacao()%>
-                                        </td>
-                                        <td>
-                                            <a href="mostrar_pedido_fc.jsp?id=<%=p.getId()%>&idPedido=<%=p.getId()%>&op=2&login=0">
-                                                <button type="button" class="btn btn-outline-success btn-sm">ver...</button></a>  
-                                            <a href="ver_material.jsp?id=<%= p.getId()%>&op=2&login=0"><button type="button" class="btn btn-outline-warning btn-sm btn-sm">Materiais</button></a>                 
-                                        </td>    
-                                    </tr>   
-                                    <% i3++;
+                                <div class="table-responsive-lg table-hover">
+                                    <table class="table table-responsive-sm table-hover" >
+                                        <tr>
+                                            <th>O.S</th>
+                                            <th>Cliente</th>
+                                            <th>Data Pedido</th>
+                                            <th>Valor</th>
+                                            <th>Situação</th>  
+                                            <th>Opções</th>
+                                            <th> </th>   
+                                        </tr>
+                                        <% int i3 = 0;
+                                            for (Pedido p : lista) {
+                                                if (p.getStatus().equals("Valor não aprovado")) {
+                                        %>
+                                        <tr>
+                                            <td><%= p.getId()%></td>
+                                            <td><%=p.getCliente().getNome()%></td>
+                                            <td ><%=sdf.format(p.getData())%> </td>
+                                            <td> <%
+                                                if (p.getValor() > 0) {
+                                                %>
+                                                <%=df.format(p.getValor())%>
+                                                <% } else if (p.getValor() == 0) {%>
+                                                Em analise
+                                                <% }%>
+                                            </td>
+                                            <td>
+                                                <%= p.getSituacao()%>
+                                            </td>
+                                            <td>
+                                                <a href="mostrar_pedido_fc.jsp?id=<%=p.getId()%>&idPedido=<%=p.getId()%>&op=2&login=0">
+                                                    <button type="button" class="btn btn-outline-success btn-sm">ver...</button></a>  
+                                                <a href="ver_material.jsp?id=<%= p.getId()%>&op=2&login=0"><button type="button" class="btn btn-outline-warning btn-sm btn-sm">Materiais</button></a>                 
+                                            </td>    
+                                        </tr>   
+                                        <% i3++;
+                                                }
                                             }
-                                        }
-                                    %>   
-                                </table>
+                                        %>   
+                                    </table>
+                                </div>
+        
                                 <h5 align="right"> Nº total pedidos = <%=i6%></h5> 
                             </div>
 
@@ -207,7 +216,20 @@
 
         </div>
             
-        <%@include file="rodape_cf.jsp" %> 
-        <%@include file="importacoes2.jsp" %>
+        <%@include file="rodape_cf.jsp" %>   
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+          crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+          crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+        <script src="javascripts/locastyle.js" type="text/javascript"></script>
     </body>
 </html>
