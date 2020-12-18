@@ -9,9 +9,9 @@ public class DataBaseDAO {
     Connection conn;
 
     public void conectar() throws Exception {
-        String url = "jdbc:mysql://localhost/protecline";
-        String user = "root";
-        String pass = "";
+        String url = "jdbc:mysql://";
+        String user = "login";
+        String pass = "senha";
         Class.forName("com.mysql.jdbc.Driver");
         conn = DriverManager.getConnection(url, user, pass);
     }

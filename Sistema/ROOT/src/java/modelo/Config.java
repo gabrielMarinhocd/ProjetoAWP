@@ -6,8 +6,8 @@ public class Config {
     private final String host = "smtp.gmail.com";
     private final String port = "587";
     private final String auth = "true";
-    private final String email = "email@gmail.com";
-    private final String username = "email@gmail.com";
+    private final String email = "email";
+    private final String username = "email";
     private final String password = "senha";
 
     public String getHost() {

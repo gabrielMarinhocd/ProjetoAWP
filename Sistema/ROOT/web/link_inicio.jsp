@@ -1,6 +1,9 @@
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AWP - Brasil</title>
+  <meta name="keywords" content="Assistência, AWP, Brasil, Assistência DF, Nobreaks DF, Brasilia">
+  <meta name="description" content="Site de gerenciamento de assistência técnica a nobreaks ">
+  <meta name="author" content="Gabriel Marinho">
   <link rel="icon" href="https://atcawpbrasil.com.br/imagens/AWP_LOGO_icone.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">

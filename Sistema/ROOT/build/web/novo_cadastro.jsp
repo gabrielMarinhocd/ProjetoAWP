@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AWP - Brasil</title>
+  <link rel="icon" href="https://atcawpbrasil.com.br/imagens/AWP_LOGO_icone.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -109,12 +110,12 @@
             <div id="tab1" class="ls-tab-content">
               <form action="cadastrar_cliente.do" method="POST" id="FormSenha" name="FormSenha" data-ls-module="form">
                 <div class="form-row" align="center">
-                  <div class="col-md-6 ">
+                  <div class="col-md-6 input">
                     <label for="validationDefault01">CPF</label>
                     <input name="cpfCnpj" type="text" class="ls-mask-cpf form-control" placeholder="EX: 000.000.000-00 "
                       required="" maxlength="14">
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 input">
                     <label for="validationDefault02">Nome Completo</label>
                     <input name="nome" type="text" class="form-control" id="validationDefault02"
                       placeholder="Ex: Pedro Álvares Cabral" onkeyup="maiuscula(this)" required="">
@@ -122,7 +123,7 @@
                 </div>
 
                 <div class="form-row" align="center">
-                  <div class="col-md-6 ">
+                  <div class="col-md-6 input ">
                     <label for="validationDefaultUsername">Email</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -132,12 +133,12 @@
                         onkeyup="minuscula(this)">
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-3 input">
                     <label for="validationDefault04">Telefone Fixo</label>
                     <input name="telefone" type="text" class="form-control ls-mask-phone8_with_ddd"
                       id="validationDefault04" placeholder="Telefone Fixo" maxlength="14">
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-3 input">
                     <label for="validationDefault05">Celular</label>
                     <input name="celular" type="text" class="form-control ls-mask-phone9_with_ddd"
                       id="validationDefault05" placeholder="Celular" maxlength="15">
@@ -146,13 +147,13 @@
 
                 <div align="center" class="form-row">
 
-                  <div class="col-md-6 ">
+                  <div class="col-md-6  input">
                     <label for="validationDefault05">Senha</label>
                     <input name="senha" type="password" placeholder="***********" class="form-control" maxlength="10"
                       id="NovaSenha">
                   </div>
-                  <div class="col-md-6">
-                    <label for="validationDefault06">Confirme sua senha</label>
+                  <div class="col-md-6 input">
+                    <label for="validat ionDefault06">Confirme sua senha</label>
                     <input type="password" placeholder="***********" class="form-control" maxlength="10"
                       id="CNovaSenha">
                   </div>
@@ -179,12 +180,12 @@
             <div id="tab2" class="ls-tab-content">
               <form action="cadastrar_cliente.do" method="POST" id="FormSenha1" name="FormSenha1" data-ls-module="form">
                 <div class="form-row" align="center">
-                  <div class="col-md-6">
+                  <div class="col-md-6 input">
                     <label for="validationDefault01">CNPJ</label>
                     <input name="cpfCnpj" type="text" class="ls-mask-cnpj form-control " maxlength="18"
                       id="validationDefault01" placeholder="00.000.000/0000-00 " required="">
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 input">
                     <label for="validationDefault02">Nome Completo</label>
                     <input name="nome" type="text" class="form-control" id="validationDefault02"
                       placeholder="Ex: Pedro Álvares Cabral" onkeyup="maiuscula(this)" required="">
@@ -192,7 +193,7 @@
                 </div>
 
                 <div class="form-row " align="center">
-                  <div class="col-md-6 ">
+                  <div class="col-md-6 input">
                     <label for="validationDefaultUsername">Email</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -202,12 +203,12 @@
                         onkeyup="minuscula(this)">
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-3 input">
                     <label for="validationDefault04">Telefone Fixo</label>
                     <input name="telefone" type="text" class="form-control ls-mask-phone8_with_ddd"
                       id="validationDefault04" placeholder="Telefone Fixo" maxlength="14">
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-3 input">
                     <label for="validationDefault05">Celular</label>
                     <input name="celular" type="text" class="form-control ls-mask-phone9_with_ddd"
                       id="validationDefault05" placeholder="Celular" maxlength="15">
@@ -216,12 +217,12 @@
 
                 <div align="center" class="form-row">
 
-                  <div class="col-md-6 ">
+                  <div class="col-md-6 input ">
                     <label for="validationDefault05">Senha</label>
                     <input name="senha" type="password" placeholder="***********" class="form-control" maxlength="10"
                       id="NovaSenha1">
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 input">
                     <label for="validationDefault06">Confirme sua senha</label>
                     <input type="password" placeholder="***********" class="form-control" maxlength="10"
                       id="CNovaSenha1">

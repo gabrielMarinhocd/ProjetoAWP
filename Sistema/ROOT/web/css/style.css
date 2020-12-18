@@ -280,6 +280,14 @@ a.img-direitos {
         width: 100%;
     }
     
+    .col-md-6.input {
+        width: 100%;
+    }
+    
+    .col-md-3.input {
+        width: 100%;
+    }
+    
     div#pedidos-pendentes {
         padding: 10px;
         text-align: center;
