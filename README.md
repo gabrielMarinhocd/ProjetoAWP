@@ -3,7 +3,7 @@
     Projeto de Assistencia tecnica para  a empresa AWP Brasil
   </p>
   <p>
-    Feito com liguagem java, possuindo tambem liguangens HTML, CSS, JavaScript.
+    Feito com liguagem java, possuindo tambem liguangens Java(jsp,servlets), HTML, CSS, JavaScript.
     Frameworks usados no projeto foram Bootstrap 4, JQuery e LocalWebStyle
   </p>
   <p>
