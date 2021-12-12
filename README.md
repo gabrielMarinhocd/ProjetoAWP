@@ -77,6 +77,7 @@
     <h2>Tecnologias Usadas</h2>
     <ul>
       <li>HTML/CSS</li>
+      <li>Java - jsp, servlets</li>
       <li>Javascript</li>
       <li>Java mail</li>
       <li>Mysql</li>
