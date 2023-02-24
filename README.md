@@ -1,14 +1,13 @@
  <h2>Projeto AWP Brasil</h2>
   <p>
-    Projeto de Assistencia tecnica para  a empresa AWP Brasil
+    Projeto de assistência tecnica de nobreaks para  a empresa AWP Brasil - Protecline
   </p>
   <p>
     Feito com liguagem java, possuindo tambem liguangens Java(jsp,servlets), HTML, CSS, JavaScript.
     Frameworks usados no projeto foram Bootstrap 4, JQuery e LocalWebStyle
   </p>
   <p>
-    O projeto tem o intuito de melhorar o acessoa a informação do cliente sendo possivel acessar todas as informações do pedido pelo site.
-    E tambem melhorar o controlhe da empresa com relção aos produtos, pedidos, clientes e funcionarios.
+    O projeto tem o intuito de melhorar o acesso a informação do cliente sendo possivel acessar todas as informações do pedido pelo sistema de forma online e melhorar o controlhe da empresa com relação aos produtos, pedidos, clientes e funcionarios.
   </p>
 
   <div>
