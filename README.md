@@ -7,7 +7,7 @@
     Frameworks usados no projeto foram Bootstrap 4, JQuery e LocalWebStyle
   </p>
   <p>
-    O projeto tem o ituito de melhorar o acessoa a informação do cliente sendo possivel acessar todas as informações do pedido pelo site.
+    O projeto tem o intuito de melhorar o acessoa a informação do cliente sendo possivel acessar todas as informações do pedido pelo site.
     E tambem melhorar o controlhe da empresa com relção aos produtos, pedidos, clientes e funcionarios.
   </p>
 
